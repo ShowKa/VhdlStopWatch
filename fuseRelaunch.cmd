@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "D:/abDATA/PLD/StopWatch/t_tffr_isim_beh.exe" -prj "D:/abDATA/PLD/StopWatch/t_tffr_beh.prj" "work.t_tffr" 

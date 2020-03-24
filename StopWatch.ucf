@@ -1,0 +1,18 @@
+NET "clk" LOC = B8;
+
+NET "reset" LOC = B18;
+NET "switch" LOC = H13;
+
+NET "an<0>" LOC = F17;
+NET "an<1>" LOC = H17;
+NET "an<2>" LOC = C18;
+NET "an<3>" LOC = F15;
+
+NET "seg7_display<0>" LOC = L18;
+NET "seg7_display<1>" LOC = F18;
+NET "seg7_display<2>" LOC = D17;
+NET "seg7_display<3>" LOC = D16;
+NET "seg7_display<4>" LOC = G14;
+NET "seg7_display<5>" LOC = J17;
+NET "seg7_display<6>" LOC = H14;
+NET "seg7_display<7>" LOC = C17;
