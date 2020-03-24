@@ -83,7 +83,7 @@ begin
 	);
 
 	-- timer
-	process(t_sww)
+	process(t_sww, clk)
 	begin 
 		-- starts clock when switch is pushed
 		if (t_sww = '1') then
@@ -106,14 +106,19 @@ begin
 		Y_DEG_10 =>  T_DEG_10
 	);
 
-	process(T_DEG_1, T_DEG_10, t_display)
+	process(T_DEG_1, T_DEG_10, t_display, RESET)
 	begin
-		case t_display is 
-			when "00" => seg7_display <= T_DEG_1; an <= "1110";
-			when "01" => seg7_display <= T_DEG_10; an <= "1101";
-			when "10" => seg7_display <=  "11000000"; an <= "1011";
-			when others => seg7_display <= "11000000"; an <= "0111";
-		end case;
+		if (RESET = '1') then
+			seg7_display <=  "11000000";
+			an <= "0000";
+		else 
+			case t_display is 
+				when "00" => seg7_display <= T_DEG_1; an <= "1110";
+				when "01" => seg7_display <= T_DEG_10; an <= "1101";
+				when "10" => seg7_display <=  "11000000"; an <= "1011";
+				when others => seg7_display <= "11000000"; an <= "0111";
+			end case;
+		end if;
 	end process;
 
 end Behavioral;

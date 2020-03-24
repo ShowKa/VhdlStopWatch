@@ -22,10 +22,5 @@ begin
 	end process;
 	
 	select_display <= cnt;
-	
-	--process(cnt)
-	--begin
-	--	select_display <= cnt;
-	--end process;
 
 end Behavioral;
