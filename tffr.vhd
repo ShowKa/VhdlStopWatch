@@ -9,6 +9,7 @@ end tffr;
 architecture Behavioral of tffr is
 	signal t_q : std_logic;
 begin
+	-- t flip-flop
 	process(t, r) 
 	begin
 		if(r='1') then

@@ -69,11 +69,11 @@ begin
 		y => t_sww
 	);
 
-	-- select display
+	-- select display (7seg = dynamic common anode)
 	Inst_clk1milis: clk1milis PORT MAP(
 		CLK => CLK,
 		RST => RESET,
-		DP => DP_mili
+		DP => DP_mili -- 1 mili sec
 	);
 
 	Inst_select_display: select_display PORT MAP(
@@ -96,7 +96,7 @@ begin
 	Inst_clk1s: clk1s PORT MAP(
 		CLK => t_clk,
 		RST => RESET,
-		DP => DP
+		DP => DP -- 1sec
 	);
 
 	Inst_timer60: timer60 PORT MAP(
@@ -109,6 +109,7 @@ begin
 	process(T_DEG_1, T_DEG_10, t_display, RESET)
 	begin
 		if (RESET = '1') then
+			-- show all dgits 0
 			seg7_display <=  "11000000";
 			an <= "0000";
 		else 

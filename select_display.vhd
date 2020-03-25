@@ -12,6 +12,7 @@ architecture Behavioral of select_display is
     signal cnt: std_logic_vector(1 downto 0);
 begin
 
+	-- toggle: 00->01->10->11->00->...
 	process(CLK, RESET) 
 	begin
 	   if (RESET = '1') then

@@ -1,22 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    10:51:43 03/23/2020 
--- Design Name: 
--- Module Name:    toggle - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -57,15 +38,17 @@ begin
 	Inst_clk1ms: clk1milis PORT MAP(
 		CLK => clk,
 		RST => reset,
-		DP => t_dp
+		DP => t_dp -- 1 mili sec
 	);
 
+	-- avoid chattering
 	Inst_chatter: chatter PORT MAP(
 		SW => sw,
 		CLK_1ms => t_dp,
 		SWW => t_sww
 	);
 	
+	-- T flip-flop
 	Inst_tffr: tffr PORT MAP(
 		t => t_sww,
 		r => reset,

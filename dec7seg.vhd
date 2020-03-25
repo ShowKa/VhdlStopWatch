@@ -1,22 +1,3 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    13:08:10 03/17/2020 
--- Design Name: 
--- Module Name:    dec7seg - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -28,6 +9,8 @@ end dec7seg;
 architecture Behavioral of dec7seg is
 
 begin
+
+	-- 7seg decoder
 	process (A)
 	begin
 		case A is
